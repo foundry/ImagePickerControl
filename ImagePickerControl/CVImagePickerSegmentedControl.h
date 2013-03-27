@@ -16,8 +16,8 @@
 /*
  minimal usage  
       _in code_
-     CVImagePickerSegmentedControl* ipSC = [[CVImagePickerSegmentedControl alloc] init];
-     [ipSC setDelegate:self];   //delegate must be a UIViewController
+     CVImagePickerSegmentedControl* imagePickerControl = [[CVImagePickerSegmentedControl alloc] init];
+     [imagePickerControl setDelegate:self];   //delegate must be a UIViewController
      
      _xib/storyboard_
      Drag out a 2-segment segmented control. Change it's class to this class. 
