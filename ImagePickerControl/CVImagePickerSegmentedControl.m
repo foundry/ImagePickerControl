@@ -161,7 +161,9 @@
         UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
         [[self class] saveCameraPrefs:picker];
     }
-    [self.delegate imagePickerImage:image info:info];
+    [self.delegate cvImagePickerControl:self
+                  didFinishPickingMedia:image
+                               withInfo:info];
     if (self.imagePickerControlsDismissing) {
         if (self.popOverController) {
             [self.popOverController dismissPopoverAnimated:YES];

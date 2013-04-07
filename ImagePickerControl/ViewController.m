@@ -22,7 +22,9 @@
 
 @implementation ViewController
 
-- (void) imagePickerImage:(UIImage*)image info:(NSDictionary*)info
+- (void) cvImagePickerControl:(CVImagePickerSegmentedControl*)control
+        didFinishPickingMedia:(UIImage*)image
+                     withInfo:(NSDictionary*)info;
 {
     self.subview.image = image;
 }

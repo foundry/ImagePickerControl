@@ -24,7 +24,9 @@
      Set it's delegate to the relevant View Controller.
  
     The only delegate method that needs to be implemented is:
-     - (void) imagePickerImage:(UIImage*)image info:(NSDictionary*)info;
+    - (void) cvImagePickerControl:(CVImagePickerSegmentedControl*)control
+            didFinishPickingImage:(UIImage*)image
+                            info:(NSDictionary*)info;
     This passes the image data back to the viewController.
  
  */
@@ -32,13 +34,15 @@
 
 #import <UIKit/UIKit.h>
 @class UISegmentedControl;
+@class CVImagePickerSegmentedControl;
 
 @protocol CVImagePickerSegmentedControlDelegate
 
 @required
 
-- (void) imagePickerImage:(UIImage*)image info:(NSDictionary*)info;
-
+- (void) cvImagePickerControl:(CVImagePickerSegmentedControl*)control
+        didFinishPickingMedia:(UIImage*)image
+                     withInfo:(NSDictionary*)info;
     //we don't need to implement these in the delegate if we are controlling the presenting and dismissing from this class, but they do need to be present in the delegate as methods to override (i.e. the delegate needs to be a UIViewController)
 - (void) presentViewController:(UIViewController *)viewControllerToPresent
                       animated:(BOOL)flag
